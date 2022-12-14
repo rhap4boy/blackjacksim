@@ -5,6 +5,7 @@ from colorama import Fore, Back, Style
 value = {'A': 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 'J': 10, 'Q': 10, 'K': 10}
 
 
+# Card Model
 class CardModel(object):
 
     def __init__(self, name):
@@ -59,7 +60,7 @@ class CardModel(object):
     def get_card(self, value1):
         return self.cards[value1]
 
-
+# Card View
 class CardView(object):
     def __init__(self):
         return
@@ -74,6 +75,7 @@ class CardView(object):
         print(Fore.LIGHTWHITE_EX + " 0 1 2 3 4 5 6 7 8 910")
 
 
+# Card Controller
 class CardController(object):
     def __init__(self, model, view):
         self.model = model

@@ -5,6 +5,8 @@ from multiprocessing import shared_memory
 value = {'A': 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 'J': 10, 'Q': 10, 'K': 10}
 player_title = "Player's Total          "
 
+
+# Stats Model
 class StatsModel(object):
     def __init__(self):
         return
@@ -75,6 +77,7 @@ class StatsModel(object):
                 self.hit_stats[i][j] = 0
 
 
+# Stats View
 class StatsView(object):
     def __init__(self):
         return
@@ -90,7 +93,7 @@ class StatsView(object):
     def print_strategy(self, stats1, stats2):
         sum = 0
         for i in range(1, 22):
-            print(Fore.LIGHTYELLOW_EX + player_title[i-2].ljust(2), end="")
+            print(Fore.LIGHTYELLOW_EX + player_title[i - 2].ljust(2), end="")
             print(Fore.LIGHTWHITE_EX + str(i).rjust(2), end="")
             for j in range(1, 11):
                 sum = sum + stats1[i][j] + stats2[i][j]
@@ -102,9 +105,10 @@ class StatsView(object):
                     else:
                         print(Fore.RED + ' H', end="")
             print("")
-        print(Style.RESET_ALL, "Sum ", sum)
+        print(Style.RESET_ALL)
 
 
+# Stats Controller
 class StatsController(object):
     def __init__(self, model, view):
         self.model = model
